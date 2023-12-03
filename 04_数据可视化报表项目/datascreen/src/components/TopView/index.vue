@@ -1,27 +1,27 @@
 <template>
-    <el-row :gutter="20">
-      <el-col :span="6">
-        <el-card shadow="hover">
-          <!-- 累计销售额 -->
-          <TotalSales></TotalSales>
-        </el-card>
-      </el-col>
-      <el-col :span="6">
-        <el-card shadow="hover">
-          <TotalOrders></TotalOrders>
-        </el-card>
-      </el-col>
-      <el-col :span="6">
-        <el-card shadow="hover">
-          <TodayUsers></TodayUsers>
-        </el-card>
-      </el-col>
-      <el-col :span="6">
-        <el-card shadow="hover">
-          <TotalUsers></TotalUsers>
-        </el-card>
-      </el-col>
-    </el-row>
+  <el-row :gutter="20">
+    <el-col :span="6">
+      <el-card shadow="hover">
+        <!-- 累计销售额 -->
+        <TotalSales></TotalSales>
+      </el-card>
+    </el-col>
+    <el-col :span="6">
+      <el-card shadow="hover">
+        <TotalOrders></TotalOrders>
+      </el-card>
+    </el-col>
+    <el-col :span="6">
+      <el-card shadow="hover">
+        <TodayUsers></TodayUsers>
+      </el-card>
+    </el-col>
+    <el-col :span="6">
+      <el-card shadow="hover">
+        <TotalUsers></TotalUsers>
+      </el-card>
+    </el-col>
+  </el-row>
 </template>
 
 <script>
@@ -90,7 +90,6 @@ span {
   top: 6px;
   left: 4px;
 }
-
 </style>
 
 <style>
