@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>echarts入门案例</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="./config.js"></script>
+    <style>
+      #chart {
+        width: 800px;
+        height: 600px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="chart"></div>
+    <script>
+      // 获取图表容器
+      const chartDom = document.getElementById("chart");
+      // 初始化echarts图表 ,主题和指定渲染方式，默认canvas，可以修改为svg
+      const chart = echarts.init(chartDom, "vintage", { renderer: "svg" });
+      // 设置图表的配置项
+      chart.setOption({
+        title: {
+          text: "echarts入门案例"
+        },
+        xAxis: {
+          data: ["食品", "数码", "服饰", "箱包"]
+        },
+        yAxis: {},
+        series: {
+          type: "bar",
+          data: [10, 20, 30, 40]
+        }
+      });
+    </script>
+  </body>
+</html>

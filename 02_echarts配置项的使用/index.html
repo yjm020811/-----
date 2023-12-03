@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>echarts配置项的使用</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <style>
+      #chart {
+        width: 800px;
+        height: 600px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="chart"></div>
+    <script>
+      // 获取图表容器
+      const chartDom = document.getElementById("chart");
+      // 初始化echarts图表
+      const chart = echarts.init(chartDom);
+      // 设置图表的配置项
+      chart.setOption({
+        // 关于dataset：https://echarts.apache.org/zh/option.html#dataset
+        // 作用:单独的数据集声明，从而数据可以单独管理，被多个组件复用，并且可以自由指定数据到视觉的映射
+        dataset: {
+          source: [
+            ["一季度", 120, 100, "分类1", 50],
+            ["二季度", 150, 110, "分类2", 50],
+            ["三季度", 100, 80, "分类3", 50],
+            ["四季度", 120, 100, "分类4", 50]
+          ]
+        },
+        title: {
+          text: "echarts配置项的使用",
+          subtext: "数据可视化副标题"
+        },
+        xAxis: {
+          data: ["一季度", "二季度", "三季度", "四季度"]
+        },
+        yAxis: {},
+        legend: {
+          data: [
+            {
+              name: "分类",
+              icon: "circle",
+              textStyle: {
+                color: "red"
+              }
+            },
+            "折线图",
+            "柱状图"
+          ],
+          right: 140
+        },
+        grid: {
+          top: 100,
+          left: '10%',
+          right: 10,
+          bottom: 100
+        },
+        toolbox: {
+          feature: {
+            dataZoom: {
+              yAxisIndex: false
+            },
+            restore: {},
+            saveAsImage: {}
+          }
+        },
+        dataZoom: [
+          {
+            show: true,
+            start: 0,
+            end: 100
+          }
+        ],
+        series: [
+          // 饼图
+          {
+            name: "分类",
+            type: "pie",
+            center: ["60%", 60],
+            radius: 35,
+            encode: { itemName: 3, value: 4 }
+            // data: [
+            //   { name: "分类1", value: 50 },
+            //   { name: "分类2", value: 50 },
+            //   { name: "分类3", value: 50 },
+            //   { name: "分类4", value: 50 }
+            // ]
+          },
+          // 折线图
+          {
+            name: "折线图",
+            type: "line",
+            encode: { x: 0, y: 1 }
+            // data: [120, 150, 100, 120]
+          },
+          // 柱状图
+          {
+            name: "柱状图",
+            type: "bar",
+            encode: { x: 0, y: 2 }
+            // data: [100, 110, 80, 100]
+          }
+        ]
+      });
+    </script>
+  </body>
+</html>
