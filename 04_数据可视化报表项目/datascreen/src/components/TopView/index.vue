@@ -1,23 +1,23 @@
 <template>
   <el-row :gutter="20">
     <el-col :span="6">
-      <el-card shadow="hover">
+      <el-card shadow="always">
         <!-- 累计销售额 -->
         <TotalSales></TotalSales>
       </el-card>
     </el-col>
     <el-col :span="6">
-      <el-card shadow="hover">
+      <el-card shadow="always">
         <TotalOrders></TotalOrders>
       </el-card>
     </el-col>
     <el-col :span="6">
-      <el-card shadow="hover">
+      <el-card shadow="always">
         <TodayUsers></TodayUsers>
       </el-card>
     </el-col>
     <el-col :span="6">
-      <el-card shadow="hover">
+      <el-card shadow="always">
         <TotalUsers></TotalUsers>
       </el-card>
     </el-col>

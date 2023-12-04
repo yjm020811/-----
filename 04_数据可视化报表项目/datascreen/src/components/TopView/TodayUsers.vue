@@ -51,7 +51,6 @@ export default {
           type: "bar"
         }
       ],
-
       grid: {
         top: 0,
         left: 0,

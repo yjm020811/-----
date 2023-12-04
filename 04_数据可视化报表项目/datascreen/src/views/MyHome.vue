@@ -1,9 +1,9 @@
 <template>
   <div class="container">
-    <TopView />
-    <SalesView />
-    <MapView />
-    <BottomView />
+    <TopView class="TopView" />
+    <SalesView class="SalesView" />
+    <BottomView class="BottomView" />
+    <MapView class="MapView" />
   </div>
 </template>
 
@@ -33,5 +33,8 @@ body,
   width: 100%;
   margin: 0;
   padding: 0;
+}
+.TopView,.SalesView,.MapView,.BottomView {
+  margin: 30px 0;
 }
 </style>
