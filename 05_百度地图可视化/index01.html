@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>地图可视化基本使用</title>
+    <script
+      type="text/javascript"
+      src="https://api.map.baidu.com/api?v=1.0&&type=webgl&ak=9Qt3Vxt1KZ2TfKkwViAsiQVbblwCFDq7"
+    ></script>
+    <style>
+      html,
+      body,
+      #map {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+      }
+      /* 去除百度下方的百度logo和版权标识 */
+      .anchorBL,
+      .BMap_cpyCtrl {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 注意这里需要使用id选择器，不能使用类选择器 -->
+    <div id="map"></div>
+    <script>
+      var map = new BMapGL.Map("map");
+      var point = new BMapGL.Point(116.404, 39.915);
+      map.centerAndZoom(point, 10);
+      map.enableScrollWheelZoom(true);
+    </script>
+  </body>
+</html>

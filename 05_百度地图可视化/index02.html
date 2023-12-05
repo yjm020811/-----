@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D地图</title>
+    <script
+      type="text/javascript"
+      src="https://api.map.baidu.com/api?v=1.0&&type=webgl&ak=9Qt3Vxt1KZ2TfKkwViAsiQVbblwCFDq7"
+    ></script>
+    <style>
+      html,
+      body,
+      #map {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+      }
+      /* 去除百度下方的百度logo和版权标识 */
+      .anchorBL,
+      .BMap_cpyCtrl {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 注意这里需要使用id选择器，不能使用类选择器 -->
+    <div id="map"></div>
+    <script>
+      var map = new BMapGL.Map("map");
+      // 创建地图中心点
+      var point = new BMapGL.Point(103.60298, 30.894435);
+      // 设置地图中心点，缩放等级
+      map.centerAndZoom(point, 18);
+      // 开启鼠标缩放
+      map.enableScrollWheelZoom(true);
+      // 设置初始头角度
+      var heading = 0;
+      // 设置地图头角度
+      map.setHeading(heading);
+      // 设置地图俯仰角
+      map.setTilt(70);
+      // 设置定时器，每500毫秒将头角度加1，并设置地图头角度
+      setInterval(() => {
+        heading++;
+        map.setHeading(heading);
+      }, 500);
+    </script>
+  </body>
+</html>
