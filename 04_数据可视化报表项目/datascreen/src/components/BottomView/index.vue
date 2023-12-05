@@ -14,23 +14,23 @@
             <div class="chart">
               <div class="chart-title">搜索用户数</div>
               <div class="chart-data">93,643</div>
-              <div id="chart-search" style="width: 380px; height: 130px"></div>
+              <div id="chart-search" style="width: 320px; height: 130px"></div>
             </div>
             <div class="chart">
               <div class="chart-title">搜索量</div>
               <div class="chart-data">198,643</div>
-              <div id="chart-searchNum" style="width: 380px; height: 130px"></div>
+              <div id="chart-searchNum" style="width: 320px; height: 130px"></div>
             </div>
           </div>
           <!-- body的table部分 -->
           <div class="table-wrapper">
             <el-table :data="tableData" style="width: 100%">
-              <el-table-column prop="rank" label="排名" width="180">
+              <el-table-column align="center" prop="rank" label="排名">
               </el-table-column>
-              <el-table-column prop="address" label="地址" width="180">
+              <el-table-column align="center" prop="address" label="地址">
               </el-table-column>
-              <el-table-column prop="users" label="用户"> </el-table-column>
-              <el-table-column prop="range" label="点击率"> </el-table-column>
+              <el-table-column align="center" prop="users" label="用户"> </el-table-column>
+              <el-table-column align="center" prop="range" label="点击率"> </el-table-column>
             </el-table>
             <el-pagination layout="prev, pager, next" :total="100" :page-size="4" background>
             </el-pagination>
@@ -113,7 +113,10 @@ export default {
     chart1.setOption({
       xAxis: {
         type: "category",
-        boundaryGap: false
+        boundaryGap: false,
+        axisTick: {
+          show: false
+        },
       },
       yAxis: {
         show: false,
@@ -140,6 +143,16 @@ export default {
         right: "4%",
         bottom: "3%",
       },
+      tooltip: {
+        show: true,
+        trigger: "axis",
+        axisPointer: {
+          type: 'cross', // 设置为 'cross' 显示十字准星指示器
+          label: {
+            backgroundColor: '#6a7985' // 可自定义标签背景颜色
+          }
+        },
+      }
     });
     const chartDom2 = document.getElementById("chart-searchNum");
     const chart2 = this.$echarts.init(chartDom2);
@@ -148,7 +161,10 @@ export default {
     chart2.setOption({
       xAxis: {
         type: "category",
-        boundaryGap: false
+        boundaryGap: false,
+        axisTick: {
+          show: false
+        },
       },
       yAxis: {
         show: false,
@@ -175,6 +191,16 @@ export default {
         right: "4%",
         bottom: "3%",
       },
+      tooltip: {
+        show: true,
+        trigger: "axis",
+        axisPointer: {
+          type: 'cross', // 设置为 'cross' 显示十字准星指示器
+          label: {
+            backgroundColor: '#6a7985' // 可自定义标签背景颜色
+          }
+        },
+      }
     });
     const chartDom3 = document.getElementById("peiChart");
     const chart3 = this.$echarts.init(chartDom3);

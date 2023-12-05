@@ -196,7 +196,13 @@ export default {
       },
       tooltip: {
         show: true,
-        trigger: "axis"
+        trigger: "axis",
+        axisPointer: {
+          type: 'cross', // 设置为 'cross' 显示十字准星指示器
+          label: {
+            backgroundColor: '#6a7985' // 可自定义标签背景颜色
+          }
+        },
       }
     });
   },
