@@ -1,0 +1,199 @@
+<!--
+	此示例下载自 https://echarts.apache.org/examples/zh/editor.html?c=line-simple&code=PYBwLglsB2AEC8sDeAoWtJgDYFMBcya6sAzgBbADuBYATgK44A0R6YOAHmAQOSAZRoH6_QH9qAExwBbYDxbFS9AEbsuvQJvxgejNA9kqBwC0AZGdNYZOYAMpgAnrgKpZ6AMbAswWr1o4RPAwF8ZxEgqUm5paENrD2js6wPGY4WI6UHrLeBgD0KbC6gKGKgJ3xgLuxANqAUHJMgM_KTIDQckyAZ7oAugYgAIYiIhDQAOYE-QCsTLAAjAAMvT39AzU-6FitANa8ZGBgICR4aZRrAHTyDRAi9Ov24in6sn7yU9CzUfOLy6sbWzt7B0dEyegcAIIcEMshxGmwQDK-oA-6MAdv6ALjlbA12G0nGZADD_ImhDUAIW6AB1NAHbGgAA5QA0QWpAHNygFLjQDHyoB24MAa8oogzmED4KJQmFw47EJFgBqdHgAWRg0iiABVGLyeAB1NxCvlkehCgBitAgQuM0IV9GgPHGqXSHEALvEowDhpoB1bUAn9qAOLltSjcoBuzwMwAAZjaSDhuKMJrAAYAFdS0WsAsCqAB88DNAGuI6TxAIhGam1zPQALBHu9PpRgFl5UH-wM4AAywAZUGgvBw0HcLujoNjvpRgHYLQDw-img3yjKYLHTrDZwk4XGKXegbTATBAAF50voAFg7sC70ECDd4EDZU1skeIDSmbRzUVwNrA8_QW1s0zatGAKpEAGEHK2opQyNOcJvXekDYB1dRROVyBnQjWarQ6sHyAGZesPYBGAA2dVQgBA1AA2swAyvVfWAyBwCA2nmAgfwGLxC3SWNADg5LUBEAaTlABfU80rVkAMgwAcQaEACAAJiGDVYBLfVAGnTQAbeOrHAACVgDZdgCAAWkHHoNVjQASOWyQBNV0AXzdADVvQBTVwMeQD3zBpaDMSjqNHRcHQwxjPUAbiUoMAAHNAHgdQAeBQMcRWl4ed3QM4zAHJNCzZHEBoOBs3TY1wwAPt0AZ0UwQMNyfjTVpG1g8gqAIG1tOYWCYAALRwfcaAYHB0IY2NDIEPyAtkIKSD5CAdyscKKGoDBUvS2Q7K1QytEAP28URy5M8u-Eg0waeRYhK0IIvKuhGBHVoSB2OloqwHTYP3Xi6SEkc7N9LDY0I4jYNc2g2ms51YJbSIeFcAtYMXRCVx4Ww83YWgb3fFp2k6P9YAA4C6iSTzPUAcGNAC5PQALNUAWUSWoXNqAAVgFaS6epsPqUsG2CaWDc5ry8V4fDML4fghtgzFpXgADdF0FZGiDAYAHEgTSm3QKGKph2Q6EQtokt4fL53ykGwcZv5aax4NbH3EgSBvLBOu6zmbG3Xd90PE8Il4ABiICGgAdgATgADi6G9O27Yw-wHQdYM8Kr_nSQAF40-wAxC0AO1tACEdTJAE7tQAeCwrb74UAelNAEBjfVADJvQAmOUAQitAH9zQAYlUAPbVAGAYwBfxTRUTAFnPQAjfSrWQu1oVyFg5gAKRpaEDEgAEoEAAPlFuwYBIMBYFZBoADV8ZwEgEFgLOc_WVyQHT9Or3EfP4CLinm1LhwcHWRw2g79hxHWPGsEYXOAG5YPQVwwHoWg4E7yfa_n0JPDn2CAUAMB1ADZTQAxtMABiV0QxMzAD34wlAAQjLFACo5b2ffhQB56wfszAANlLFABkI-FADc9QA37aAAKlSsO1S7l2TqndgIgAAiyIG6VxrtPOuC9YAtyou3KeM9C7FxsEvFecAAAGAAeEgjQ4BlwbPAAARLtAgB1Z6jm7PxSgCEkJOiUlgEQs8aEF0AGtyKIzLgjwAAEiQNgnAngSEpHIQ0aABciFb1CLAHeaD1gACtQbQHTjwEh8haAFx4HPW8sBAD-8oACldYD6MMbAQARsY_xQHvdIgAV-JDk7QAaMqADgVFEsAAASfJORplgM_eEFjjRmytrbO2U1HSEOYSnaEMD4FsmUegN4xtYCADv5QAnKZQKSUlSJep9RgNpnWIIYVQj0KiAdG8Y4JzBB4NOY6c4Rz1J1v2WiaEkiE0pklCAddOgGD7ugSunQ-hdCGLAGiqFeg0RogBGifRVa9D6D-EYQ5FZzKAmMEccNeAIxvACQQQgTKADB1QAnQ4ogciZcKZhxBcI6QOeiVSV4kDPDwEA2jLpHPSOci5gBB02yEI8sicbBCy6lgDGNgARqEAGQqgA-M0-s5FRVMBqxRUaY_5WEzKAHT9S0aCWhl3kedAggwRxRnSIaA0gBt-J_oAeQVADfnmg209pHSdBGIOXZaDqn7TFAbea6RBCgtgp3eswQRnEF5TEOIVBEg2AydVIVAhADOeoARbtAB_KYScKkgeJkGhhimF6RABcyoAffVADWGoAUUVKyACAGMEXikW3zNYAI3TAD3nkII6rgGjisqSo3ltSDZI3QKBUxdtvqWkACAqD9ACdpoARBVVroD3DsaFxNNJ0RecQNcTo-h0RdHKDhZLc2KR4sTcQZKBjdNUSgTws8gA
+	⚠ 请注意，该图表不是 Apache ECharts 官方示例，而是由用户代码生成的。请注意鉴别其内容。
+-->
+<!DOCTYPE html>
+<html lang="zh-CN" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <!-- Uncomment this line if you want to dataTool extension
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.3/dist/extension/dataTool.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use gl extension
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts-gl@2/dist/echarts-gl.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to echarts-stat extension
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts-stat@latest/dist/ecStat.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use map
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@4.9.0/map/js/china.js"></script>
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@4.9.0/map/js/world.js"></script>
+  -->
+  <!-- Uncomment these two lines if you want to use bmap extension
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=YOUR_API_KEY"></script>
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.3/dist/extension/bmap.min.js"></script>
+  -->
+
+  <script type="text/javascript">
+    var dom = document.getElementById('container');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option;
+
+    option = {
+  title: {
+    show: true,
+    text: '折线图demo',
+    subtext: '这是副标题',
+    textStyle: {
+      color: 'red'
+    },
+    subtextStyle: {
+      color: 'yellow'
+    },
+    // 标题内边距[上,右,下,左]
+    padding: [5, 10, 5, 10],
+    link: 'https://www.baidu.com/',
+    sublink: 'https://www.baidu.com/'
+  },
+  xAxis: {
+    // 当设置为category，data的数据一般是从接口获取的
+    type: 'category',
+    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+    // x轴的文字对于x轴的距离
+    offset: 10,
+    // 坐标轴名称
+    name: '我是x轴',
+    // 设置坐标轴名称的位置
+    nameLocation: 'end',
+    // 设置坐标轴名称的样式
+    nameTextStyle: {
+      color: 'red',
+      fontSize: 14,
+      fontStyle: 'italic',
+      align: 'left',
+      backgroundColor: 'white',
+      // 文字块的内边距
+      padding: [3, 4, 5, 6],
+      // 文字高度
+      height: 30
+    },
+    // 坐标轴与轴线之间的距离
+    nameGap: 20,
+    // 坐标轴名字旋转
+    nameRotate: -45,
+    //坐标轴两边留白策略
+    boundaryGap: false,
+    // 坐标轴刻度最小值
+    min: '',
+    // 坐标轴刻度最大值
+    max: '',
+    // 坐标轴轴线相关设置
+    axisLine: {
+      show: false,
+      onZero: true
+    },
+    // 坐标轴刻度线相关设置
+    axisTick: {
+      show: true
+    },
+    // 坐标轴刻度标签的相关设置
+    axisLabel: {
+      show: true,
+      inside: false,
+      rotate: 45,
+      // 坐标名称与坐标轴之间的距离
+      margin: 10,
+      color: 'red',
+      align: 'center',
+      padding: [3, 4, 5, 6]
+    },
+    // 坐标轴指示器配置
+    axisPointer: {
+      show: true,
+      type: 'line'
+    }
+  },
+  yAxis: {
+    type: 'value'
+  },
+  tooltip: {
+    show: true,
+    trigger: 'axis',
+    axisPointer: {
+      type: 'cross',
+      label: {
+        backgroundColor: '#6a7985',
+        fontSize: 14
+      }
+    },
+    // 提示框浮层内容格式器，支持字符串模板和回调函数两种形式
+    formatter: (params) => {
+      const dataValues = params.map((item) => {
+        console.log(item.value);
+        return item.value;
+      });
+      // 将收集到的数据值连接成一个字符串，每个值占一行，并添加样式
+      const formattedData = dataValues
+        .map((value) => {
+          return `<span style="color: red; font-weight: bold;">他的值为:${value}</span>`;
+        })
+        .join('<br>'); // 使用 <br> 换行
+
+      // 返回格式化后的 HTML 字符串，用于提示框浮层内容
+      return formattedData;
+    },
+    // 修改formatter提示框的文字样式
+    textStyle: {
+      color: 'red',
+      fontStyle: 'italic',
+      fontSize: 20
+    }
+  },
+  series: [
+    {
+      data: [150, 230, 224, 218, 135, 147, 260],
+      type: 'line',
+      // 折线图小圆点的大小
+      symbolSize: 10,
+      cursor: 'pointer',
+      // 小圆点旁边的值的样式
+      label: {
+        // 是否显示值
+        show: true,
+        // 小圆点与值得距离
+        distance: 10,
+        // 对文字进行偏移
+        offset: [5, 40],
+        color: 'red'
+      },
+      // 折线的样式
+      itemStyle: {
+        color: 'yellow'
+      },
+      // 折线平滑链接
+      smooth: true,
+      // 区域填充样式。设置后显示成区域面积图
+      areaStyle: {
+        color: 'red'
+      }
+    }
+  ],
+  // 容器距离各个方向的距离
+  grid: {
+    top: 200,
+    left: 120,
+    right: 120,
+    bottom: 100
+  }
+};
+
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>
