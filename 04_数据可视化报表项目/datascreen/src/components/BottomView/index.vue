@@ -19,7 +19,10 @@
             <div class="chart">
               <div class="chart-title">搜索量</div>
               <div class="chart-data">198,643</div>
-              <div id="chart-searchNum" style="width: 320px; height: 130px"></div>
+              <div
+                id="chart-searchNum"
+                style="width: 320px; height: 130px"
+              ></div>
             </div>
           </div>
           <!-- body的table部分 -->
@@ -29,10 +32,17 @@
               </el-table-column>
               <el-table-column align="center" prop="address" label="地址">
               </el-table-column>
-              <el-table-column align="center" prop="users" label="用户"> </el-table-column>
-              <el-table-column align="center" prop="range" label="点击率"> </el-table-column>
+              <el-table-column align="center" prop="users" label="用户">
+              </el-table-column>
+              <el-table-column align="center" prop="range" label="点击率">
+              </el-table-column>
             </el-table>
-            <el-pagination layout="prev, pager, next" :total="100" :page-size="4" background>
+            <el-pagination
+              layout="prev, pager, next"
+              :total="100"
+              :page-size="4"
+              background
+            >
             </el-pagination>
           </div>
         </div>
@@ -52,7 +62,7 @@
           </div>
         </template>
         <div class="chart-wrapper">
-          <div id="peiChart" style="width: 700px; height: 400px;"></div>
+          <div id="peiChart" style="width: 700px; height: 400px"></div>
         </div>
       </el-card>
     </div>
@@ -76,7 +86,7 @@ export default {
           address: "北京",
           count: 100,
           users: 90,
-          range: "90%"
+          range: "90%",
         },
         {
           id: "2",
@@ -84,7 +94,7 @@ export default {
           address: "达州",
           count: 100,
           users: 90,
-          range: "90%"
+          range: "90%",
         },
         {
           id: "3",
@@ -92,7 +102,7 @@ export default {
           address: "洛杉矶",
           count: 100,
           users: 90,
-          range: "90%"
+          range: "90%",
         },
         {
           id: "4",
@@ -100,9 +110,9 @@ export default {
           address: "成都",
           count: 100,
           users: 90,
-          range: "90%"
+          range: "90%",
         },
-      ]
+      ],
     };
   },
   mounted() {
@@ -115,7 +125,7 @@ export default {
         type: "category",
         boundaryGap: false,
         axisTick: {
-          show: false
+          show: false,
         },
       },
       yAxis: {
@@ -126,16 +136,16 @@ export default {
           data: [120, 200, 150, 80, 70, 110, 130, 100, 210, 100, 200, 300],
           type: "line",
           areaStyle: {
-            color: "rgba(95,187,255,0.5)"
+            color: "rgba(95,187,255,0.5)",
           },
           itemStyle: {
-            opacity: 0
+            opacity: 0,
           },
           lineStyle: {
-            color: "rgba(95,187,255)"
+            color: "rgba(95,187,255)",
           },
-          smooth: true
-        }
+          smooth: true,
+        },
       ],
       grid: {
         top: "15%", // 调整为适当的百分比或像素值
@@ -147,12 +157,12 @@ export default {
         show: true,
         trigger: "axis",
         axisPointer: {
-          type: 'cross', // 设置为 'cross' 显示十字准星指示器
+          type: "cross", // 设置为 'cross' 显示十字准星指示器
           label: {
-            backgroundColor: '#6a7985' // 可自定义标签背景颜色
-          }
+            backgroundColor: "#6a7985", // 可自定义标签背景颜色
+          },
         },
-      }
+      },
     });
     const chartDom2 = document.getElementById("chart-searchNum");
     const chart2 = this.$echarts.init(chartDom2);
@@ -163,7 +173,7 @@ export default {
         type: "category",
         boundaryGap: false,
         axisTick: {
-          show: false
+          show: false,
         },
       },
       yAxis: {
@@ -174,16 +184,16 @@ export default {
           data: [120, 200, 150, 80, 70, 110, 130, 100, 210, 100, 200, 300],
           type: "line",
           areaStyle: {
-            color: "rgba(95,187,255,0.5)"
+            color: "rgba(95,187,255,0.5)",
           },
           itemStyle: {
-            opacity: 0
+            opacity: 0,
           },
           lineStyle: {
-            color: "rgba(95,187,255)"
+            color: "rgba(95,187,255)",
           },
-          smooth: true
-        }
+          smooth: true,
+        },
       ],
       grid: {
         top: "15%", // 调整为适当的百分比或像素值
@@ -195,122 +205,135 @@ export default {
         show: true,
         trigger: "axis",
         axisPointer: {
-          type: 'cross', // 设置为 'cross' 显示十字准星指示器
+          type: "cross", // 设置为 'cross' 显示十字准星指示器
           label: {
-            backgroundColor: '#6a7985' // 可自定义标签背景颜色
-          }
+            backgroundColor: "#6a7985", // 可自定义标签背景颜色
+          },
         },
-      }
+      },
     });
     const chartDom3 = document.getElementById("peiChart");
     const chart3 = this.$echarts.init(chartDom3);
     this.chartInstance3 = chart3;
     window.addEventListener("resize", this.handleResize);
     chart3.setOption({
-      title: [{
-        text: "品类分布",
-        textStyle: {
-          fontSize: 14,
-          color: "#666"
+      title: [
+        {
+          text: "品类分布",
+          textStyle: {
+            fontSize: 14,
+            color: "#666",
+          },
+          left: 20,
+          top: 20,
         },
-        left: 20,
-        top: 20,
-      },
-      {
-        text: "累计订单量",
-        subtext: "320",
-        x: '34.5%',
-        y: '42.5%',
-        textAlign: "center",
-        textStyle: {
-          fontSize: 14,
-          color: "#999"
+        {
+          text: "累计订单量",
+          subtext: "320",
+          x: "34.5%",
+          y: "42.5%",
+          textAlign: "center",
+          textStyle: {
+            fontSize: 14,
+            color: "#999",
+          },
+          subtextStyle: {
+            fontSize: 28,
+            color: "#333",
+          },
         },
-        subtextStyle: {
-          fontSize: 28,
-          color: "#333"
-        }
-      }
       ],
-      series: [{
-        type: "pie",
-        name: "品类分布",
-        data: [
-          {
-            legendName: "粉面粥店",
-            value: 67,
-            percentage: '15.4%',
-            itemStyle: {
-              color: 'red'
+      series: [
+        {
+          type: "pie",
+          name: "品类分布",
+          data: [
+            {
+              legendName: "粉面粥店",
+              value: 67,
+              percentage: "15.4%",
+              itemStyle: {
+                color: "red",
+              },
+              name: "粉面粥店|15.4%",
             },
-            name: "粉面粥店|15.4%"
+            {
+              legendName: "简餐便当",
+              value: 97,
+              percentage: "22.30%",
+              name: "简餐便当|22.30%",
+            },
+            {
+              legendName: "汉堡披萨",
+              value: 92,
+              percentage: "21.15%",
+              name: "汉堡披萨|21.15%",
+            },
+            {
+              legendName: "螺蛳粉",
+              value: 67,
+              percentage: "15.4%",
+              name: "螺蛳粉|15.4%",
+            },
+            {
+              legendName: "海底捞",
+              value: 67,
+              percentage: "15.4%",
+              name: "海底捞|15.4%",
+            },
+          ],
+          label: {
+            // normal: {
+            //   show: true,
+            //   position: "outter",
+            //   formatter: function (params) {
+            //     return params.data.legendName;
+            //   },
+            // },
           },
-          {
-            legendName: "简餐便当",
-            value: 97,
-            percentage: '22.30%',
-            name: '简餐便当|22.30%'
-          }, {
-            legendName: "汉堡披萨",
-            value: 92,
-            percentage: '21.15%',
-            name: '汉堡披萨|21.15%'
+          center: ["35%", "50%"],
+          /* 内半径与外半径 */
+          radius: ["45%", "60%"],
+          labelLine: {
+            // normal: {
+            //   length: 5,
+            //   length2: 3,
+            //   smooth: true
+            // }
           },
-          {
-            legendName: "螺蛳粉",
-            value: 67,
-            percentage: '15.4%',
-            name: '螺蛳粉|15.4%'
-          }, {
-            legendName: "海底捞",
-            value: 67,
-            percentage: '15.4%',
-            name: '海底捞|15.4%'
-          }
-        ],
-        label: {
-          normal: {
-            show: true,
-            position: "outter",
-            formatter: function (params) {
-              return params.data.legendName
-            }
-          }
+          clockwise: false,
+          itemStyle: {
+            borderWidth: 6,
+            borderColor: "#fff",
+          },
         },
-        center: ['35%', '50%'],
-        /* 内半径与外半径 */
-        radius: ['45%', '60%'],
-        labelLine: {
-          normal: {
-            length: 5,
-            length2: 3,
-            smooth: true
-          }
-        },
-        clockwise: false,
-        itemStyle: {
-          borderWidth: 6,
-          borderColor: '#fff'
-        }
-      }],
+      ],
       legend: {
         type: "scroll",
-        orient: 'vertical',
-        left: '70%',
+        orient: "vertical",
+        left: "70%",
         top: "middle",
         textStyle: {
-          color: '#8c8c8c'
-        }
+          color: "#8c8c8c",
+        },
       },
       tooltip: {
-        trigger: 'item',
+        trigger: "item",
         formatter: function (params) {
-          return params.seriesName + '<br />' +
-            params.marker + params.data.legendName + '<br />' +
-            '数量:' + params.data.value + '<br />' +
-            '占比:' + params.data.percentage
-        }
-      }
+          return (
+            params.seriesName +
+            "<br />" +
+            params.marker +
+            params.data.legendName +
+            "<br />" +
+            "数量:" +
+            params.data.value +
+            "<br />" +
+            "占比:" +
+            params.data.percentage
+          );
+        },
+      },
     });
   },
 };
@@ -360,7 +383,7 @@ export default {
 
       .chart-title {
         color: #999;
-        font-size: 14px
+        font-size: 14px;
       }
 
       .chart-data {

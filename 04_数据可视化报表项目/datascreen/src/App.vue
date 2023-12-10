@@ -1,20 +1,18 @@
 <template>
   <div id="app">
-   <MyHome></MyHome>
+    <MyHome></MyHome>
   </div>
 </template>
 
 <script>
-import MyHome from './views/MyHome'
+import MyHome from "./views/MyHome";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    MyHome
-  }
-}
+    MyHome,
+  },
+};
 </script>
 
-<style scoped>
 
-</style>
