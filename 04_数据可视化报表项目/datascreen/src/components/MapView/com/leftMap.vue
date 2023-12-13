@@ -420,7 +420,7 @@ export default {
         center: [104.114129, 30.652939],
         zoom: 5,
         // 鼠标滚动放大缩小地图
-        roam: true,
+        roam: false,
         mapStyle: {
           styleJson: [
             {
