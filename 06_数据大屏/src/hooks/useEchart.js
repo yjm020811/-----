@@ -17,9 +17,15 @@ export default function useEchart(divEl) {
     echartInstance.resize();
   }
 
+  // 注册地图
+  function registerMap(mapName, mapData) {
+    echarts.registerMap(mapName, mapData);
+  }
+
   return {
     echartInstance,
     setOption,
-    resizeEchart
+    resizeEchart,
+    registerMap
   };
 }

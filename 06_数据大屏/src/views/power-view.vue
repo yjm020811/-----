@@ -17,7 +17,9 @@
       <right-bottom-svg :dots="exceptionMonitoring"></right-bottom-svg>
     </div>
 
-    <div class="center"></div>
+    <div class="center">
+      <echarts-map></echarts-map>
+    </div>
     <div class="bottom"></div>
   </div>
 </template>
@@ -26,7 +28,7 @@
 import PieCharts from "@/components/pie-echarts.vue";
 import LineCharts from "@/components/line-echarts.vue";
 import BarCharts from "@/components/bar-echarts.vue";
-
+import EchartsMap from "@/components/echarts-map.vue";
 import RightBottomSvg from "@/components/right-bottom-svg.vue";
 
 import { ref } from "vue";
@@ -38,6 +40,7 @@ import {
   chargingStatisticsData,
   exceptionMonitoringData
 } from "./config/home-data";
+import echartsMapVue from "../components/echarts-map.vue";
 // 充电桩饱和比例
 let chargingPile = ref(chargingPileData);
 // 流程监控
