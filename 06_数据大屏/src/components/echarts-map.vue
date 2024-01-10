@@ -7,7 +7,6 @@
 import { onMounted, watch, ref } from "vue";
 import useEchart from "@/hooks/useEchart";
 import mapJson from "../assets/map-json/sichuan.json";
-console.log(mapJson);
 
 const props = defineProps({
   width: {
@@ -80,9 +79,16 @@ function getOption(echartDatas = []) {
           shadBlur: 20,
           shadowOffsetX: -5,
           shadowOffsetY: 15
+        },
+        tooltip: {
+          trigger: "item",
+          formatter: function (params) {
+            console.log(params);
+          }
         }
       }
     ],
+    // 是视觉映射组件
     visualMap: {
       show: true,
       max: 100,
@@ -96,23 +102,43 @@ function getOption(echartDatas = []) {
       {
         type: "map",
         map: "sichuan",
+        // 视角缩放比例
         zoom: 1,
+        // 是否开启鼠标缩放和平移地图
         roam: false,
+        // 图形上的文本
         label: {
           show: true,
-          color: "#000",
-          emphasis: {
-            color: "#fff",
-            show: true
-          }
+          // 旋转文本
+          rotate: -20,
+          // 对文本进行偏移
+          // offset: [10, 40],
+          // 文本字体风格
+          fontStyle: "italic",
+          // 文本字体粗细
+          fontWeight: "bold",
+
+          color: "#000"
         },
+        emphasis: {
+          color: "#fff",
+          show: true
+        },
+        // 地图区域的多边形 图形样式
         itemStyle: {
-          normal: {
-            borderColor: "#013c62",
-            borderWidth: 1,
-            areaColor: "#031525"
+          // 图形的描边颜色
+          borderColor: "#013c62",
+          borderWidth: 1
+        },
+        // 高亮状态的图形和标签样式
+        emphasis: {
+          label: {
+            // 标签文本的格式
+            formatter: "{b}",
+            color: "#fff",
+            fontSize: 18
           },
-          emphasis: {
+          itemStyle: {
             areaColor: "#2B9184",
             borderWidth: 0,
             color: "#2B9184"
@@ -121,7 +147,6 @@ function getOption(echartDatas = []) {
         data: center.map((item) => {
           const key = Object.keys(item)[0];
           const value = Math.random() * 100;
-          console.log(key, value);
           return {
             name: key,
             value: value
@@ -142,27 +167,31 @@ function getOption(echartDatas = []) {
         itemStyle: {
           color: "#fea200"
         },
+        // 散点涟漪的相关配置
+        rippleEffect: {
+          color: "#fff",
+          period: 2 // 动画时间，值越小速度越快
+        },
+        // 图形上的文本标签，可用于说明图形的一些数据信息，比如值，名称等
         label: {
-          normal: {
-            show: true,
-            position: "top",
-            formatter: function (params) {
-              return `{name|${params.name}}\n{content|${params.value[0]}}`;
+          show: true,
+          position: "top",
+          formatter: function (params) {
+            return `{name|${params.name}}\n{content|${params.value[0]}}`;
+          },
+          backgroundColor: "#fea200",
+          padding: [0, 0],
+          borderRadius: 3,
+          lineHieght: 34,
+          color: "#fff",
+          rich: {
+            title: {
+              padding: [0, 10, 10, 10],
+              color: "#fff"
             },
-            backgroundColor: "#fea200",
-            padding: [0, 0],
-            borderRadius: 3,
-            lineHieght: 34,
-            color: "#fff",
-            rich: {
-              title: {
-                padding: [0, 10, 10, 10],
-                color: "#fff"
-              },
-              content: {
-                padding: [10, 10, 0, 10],
-                color: "red"
-              }
+            content: {
+              padding: [10, 10, 0, 10],
+              color: "red"
             }
           }
         },
