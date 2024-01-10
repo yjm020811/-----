@@ -1,15 +1,21 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import PowerView from '@/views/power-view.vue'
+import { createRouter, createWebHistory } from "vue-router";
+import PowerView from "@/views/power-view.vue";
+import ThreeEarth from "@/views/three-earth.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/',
-      name: 'powerview',
+      path: "/",
+      name: "powerview",
       component: PowerView
+    },
+    {
+      path: "/three-earth",
+      name: "ThreeEarth",
+      component: ThreeEarth
     }
   ]
-})
+});
 
-export default router
+export default router;

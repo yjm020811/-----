@@ -2,7 +2,7 @@ import * as echarts from "echarts";
 import { onUnmounted } from "vue";
 
 export default function useEchart(divEl) {
-  const echartInstance = echarts.init(divEl, null, { renderer: "svg" });
+  const echartInstance = echarts.init(divEl, null, { renderer: "canvas" });
 
   onUnmounted(() => {
     echartInstance.dispose(); // 销毁实例

@@ -110,19 +110,14 @@ function getOption(echartDatas = []) {
         label: {
           show: true,
           // 旋转文本
-          rotate: -20,
+          // rotate: -20,
           // 对文本进行偏移
           // offset: [10, 40],
           // 文本字体风格
-          fontStyle: "italic",
+          // fontStyle: "italic",
           // 文本字体粗细
-          fontWeight: "bold",
-
+          fontWeight: "normal",
           color: "#000"
-        },
-        emphasis: {
-          color: "#fff",
-          show: true
         },
         // 地图区域的多边形 图形样式
         itemStyle: {
@@ -134,9 +129,27 @@ function getOption(echartDatas = []) {
         emphasis: {
           label: {
             // 标签文本的格式
-            formatter: "{b}",
-            color: "#fff",
-            fontSize: 18
+            height: 40,
+            backgroundColor: "#fff",
+            color: "#000",
+            padding: [8, 10, 4],
+            fontSize: 16,
+            borderColor: "skyblue",
+            borderWidth: 1,
+            formatter: (params) => {
+              console.log(params);
+              // 根据需要配置提示内容
+              let str = params.data.name;
+              if (
+                typeof params.value === "string" &&
+                params.value.length >= 2
+              ) {
+                str += "\n" + params.value.slice(-2);
+              } else {
+                str += "\n" + params.value; // 如果字符串长度小于2或者不是字符串，直接拼接整个字符串
+              }
+              return str;
+            }
           },
           itemStyle: {
             areaColor: "#2B9184",

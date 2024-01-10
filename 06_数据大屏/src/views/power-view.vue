@@ -1,6 +1,8 @@
 <template>
   <div class="screen-bg">
-    <div class="header"></div>
+    <div class="header">
+      <button class="link" @click="ThreeEarth">3D地图</button>
+    </div>
 
     <div class="left-top">
       <pie-charts :echartDatas="chargingPile"></pie-charts>
@@ -30,7 +32,7 @@ import LineCharts from "@/components/line-echarts.vue";
 import BarCharts from "@/components/bar-echarts.vue";
 import EchartsMap from "@/components/echarts-map.vue";
 import RightBottomSvg from "@/components/right-bottom-svg.vue";
-
+import { useRouter } from "vue-router";
 import { ref } from "vue";
 
 import { getPowerScreenData } from "@/services";
@@ -56,6 +58,11 @@ getPowerScreenData().then((res) => {
   processMonitoring.value = res.data.processMonitoring.data;
   chargingStatistics.value = res.data.chargingStatistics.data;
 });
+
+const router = useRouter();
+const ThreeEarth = () => {
+  router.push("/three-earth");
+};
 </script>
 
 <style scoped>
@@ -82,6 +89,16 @@ getPowerScreenData().then((res) => {
   /* 背景 */
   background-image: url(@/assets/images/bg_header.svg);
   background-repeat: no-repeat;
+}
+.link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: right;
+  height: 40px;
+  cursor: pointer;
+  color: red;
+  font-size: 20px;
 }
 
 .left-top {
