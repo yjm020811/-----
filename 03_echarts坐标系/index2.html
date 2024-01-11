@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>双坐标轴图</title>
     <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
-    <script src="./config.js"></script>
     <style>
       #chart {
         width: 800px;
@@ -24,13 +23,16 @@
       // 设置图表的配置项
       chart.setOption({
         xAxis: {
-          type:'category'
+          type: "category"
         },
-        yAxis: [{}, {
-          splitLine:{
-            show:false
+        yAxis: [
+          {},
+          {
+            splitLine: {
+              show: false
+            }
           }
-        }],
+        ],
         dataset: {
           source: [
             ["product", "2012", "2013", "2014", "2015"],

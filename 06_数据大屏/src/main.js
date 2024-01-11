@@ -1,13 +1,11 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
-
+import { createApp } from "vue";
+import App from "./App.vue";
+import router from "./router";
 // 重置样式( 统一样式的风格 )
-import 'normalize.css'
-import './assets/main.css'
+import "normalize.css";
+import "./assets/main.css";
 
-const app = createApp(App)
+const app = createApp(App);
 
-app.use(router)
-
-app.mount('#app')
+app.use(router);
+app.mount("#app");
